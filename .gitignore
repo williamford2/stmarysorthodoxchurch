@@ -1,0 +1,63 @@
+# Claude local overrides (personal, not shared)
+CLAUDE.local.md
+
+# Claude Code session timing state (per-machine, not shared)
+.claude/session-state.json
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Go
+*.exe
+*.test
+/vendor/
+
+# Rust
+/target/
+Cargo.lock
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+.claude/hooks/*.log
