@@ -4,7 +4,7 @@ import { church } from "@/data/church";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#111827' }}>
       {/* Background image */}
       <Image
         src="/images/church-exterior.jpg"
@@ -14,8 +14,8 @@ export function HeroSection() {
         priority
         sizes="100vw"
       />
-      {/* Neutral dark overlay — no color tint */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+      {/* Neutral dark overlay — explicit rgba to avoid any color tint */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.25), rgba(0,0,0,0.65))' }} />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
