@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MockupBanner } from "@/components/layout/MockupBanner";
+import { AccessibilityToggle } from "@/components/layout/AccessibilityToggle";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -34,11 +35,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+      <head>
+        {/* Apply saved accessibility preference before first paint to avoid flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem('a11y-enhanced')==='true'){document.documentElement.setAttribute('data-a11y','enhanced');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased bg-church-cream text-church-charcoal">
         <MockupBanner />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <AccessibilityToggle />
       </body>
     </html>
   );

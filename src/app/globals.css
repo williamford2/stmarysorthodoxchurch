@@ -151,3 +151,115 @@
     @apply font-heading;
   }
 }
+
+/* ─── Accessibility: High Contrast + Large Font ────────────────────────────
+   Applied when the user clicks the accessibility toggle (data-a11y="enhanced")
+   OR when their OS reports a high-contrast preference.
+   All values are plain hex/rgb so there is zero ambiguity in rendering.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Variables shared by both the manual toggle and the OS preference */
+:root {
+  --a11y-burgundy:       #000000;
+  --a11y-burgundy-dark:  #000000;
+  --a11y-burgundy-light: #1a0008;
+  --a11y-gold:           #FFD700;
+  --a11y-gold-light:     #FFE566;
+  --a11y-gold-muted:     #CCA800;
+  --a11y-cream:          #FFFFFF;
+  --a11y-cream-dark:     #F0F0F0;
+  --a11y-charcoal:       #000000;
+}
+
+/* Manual toggle */
+html[data-a11y="enhanced"] {
+  font-size: 1.25rem;
+  --church-burgundy:       var(--a11y-burgundy);
+  --church-burgundy-dark:  var(--a11y-burgundy-dark);
+  --church-burgundy-light: var(--a11y-burgundy-light);
+  --church-gold:           var(--a11y-gold);
+  --church-gold-light:     var(--a11y-gold-light);
+  --church-gold-muted:     var(--a11y-gold-muted);
+  --church-cream:          var(--a11y-cream);
+  --church-cream-dark:     var(--a11y-cream-dark);
+  --church-charcoal:       var(--a11y-charcoal);
+  --background:            oklch(1 0 0);
+  --foreground:            oklch(0 0 0);
+  --card:                  oklch(1 0 0);
+  --card-foreground:       oklch(0 0 0);
+  --border:                oklch(0 0 0);
+  --input:                 oklch(0 0 0);
+  --ring:                  #FFD700;
+  --muted:                 oklch(0.95 0 0);
+  --muted-foreground:      oklch(0 0 0);
+}
+
+/* OS-level high-contrast preference — same overrides, auto-applied */
+@media (prefers-contrast: more) {
+  :root {
+    font-size: 1.25rem;
+    --church-burgundy:       var(--a11y-burgundy);
+    --church-burgundy-dark:  var(--a11y-burgundy-dark);
+    --church-burgundy-light: var(--a11y-burgundy-light);
+    --church-gold:           var(--a11y-gold);
+    --church-gold-light:     var(--a11y-gold-light);
+    --church-gold-muted:     var(--a11y-gold-muted);
+    --church-cream:          var(--a11y-cream);
+    --church-cream-dark:     var(--a11y-cream-dark);
+    --church-charcoal:       var(--a11y-charcoal);
+    --background:            oklch(1 0 0);
+    --foreground:            oklch(0 0 0);
+    --card:                  oklch(1 0 0);
+    --card-foreground:       oklch(0 0 0);
+    --border:                oklch(0 0 0);
+    --input:                 oklch(0 0 0);
+    --ring:                  #FFD700;
+    --muted:                 oklch(0.95 0 0);
+    --muted-foreground:      oklch(0 0 0);
+  }
+}
+
+html[data-a11y="enhanced"] body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@media (prefers-contrast: more) {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+/* Ensure all links are clearly underlined and use gold on dark backgrounds */
+html[data-a11y="enhanced"] a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Stronger focus rings — critical for keyboard navigation */
+html[data-a11y="enhanced"] *:focus-visible {
+  outline: 3px solid #FFD700;
+  outline-offset: 3px;
+}
+
+/* Make borders on cards/inputs visible */
+html[data-a11y="enhanced"] .border,
+html[data-a11y="enhanced"] [class*="border-"] {
+  border-color: #000000 !important;
+}
+
+/* Gray text becomes black */
+html[data-a11y="enhanced"] .text-gray-500,
+html[data-a11y="enhanced"] .text-gray-600,
+html[data-a11y="enhanced"] .text-gray-700 {
+  color: #000000 !important;
+}
+
+/* Muted/dimmed cream text on dark backgrounds becomes white */
+html[data-a11y="enhanced"] .text-church-cream\/60,
+html[data-a11y="enhanced"] .text-church-cream\/70,
+html[data-a11y="enhanced"] .text-church-cream\/80 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
