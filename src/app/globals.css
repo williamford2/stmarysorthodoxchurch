@@ -45,9 +45,30 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-church-burgundy: var(--church-burgundy);
+  --color-church-burgundy-dark: var(--church-burgundy-dark);
+  --color-church-burgundy-light: var(--church-burgundy-light);
+  --color-church-gold: var(--church-gold);
+  --color-church-gold-light: var(--church-gold-light);
+  --color-church-gold-muted: var(--church-gold-muted);
+  --color-church-cream: var(--church-cream);
+  --color-church-cream-dark: var(--church-cream-dark);
+  --color-church-charcoal: var(--church-charcoal);
+  --font-heading: var(--font-playfair);
 }
 
 :root {
+  /* Church brand colors */
+  --church-burgundy: #6B1A2A;
+  --church-burgundy-dark: #4A0F1C;
+  --church-burgundy-light: #8B2035;
+  --church-gold: #C9A84C;
+  --church-gold-light: #E2C97E;
+  --church-gold-muted: #9E8040;
+  --church-cream: #FAF6F0;
+  --church-cream-dark: #F0E8DB;
+  --church-charcoal: #2C2C2C;
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -125,5 +146,8 @@
   }
   html {
     @apply font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
