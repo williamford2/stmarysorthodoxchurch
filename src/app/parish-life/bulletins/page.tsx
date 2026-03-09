@@ -19,8 +19,9 @@ export default function BulletinsPage() {
             <h2 className="font-heading text-xl font-semibold text-church-burgundy">Parish Bulletins</h2>
           </div>
           <p className="text-gray-700">
-            Our weekly bulletin, &ldquo;The Bells of Saint Mary&apos;s,&rdquo; contains service schedules,
-            parish announcements, and spiritual readings. New bulletins will be posted here each week.
+            <em>The Bells of Saint Mary&apos;s</em> is our monthly parish bulletin, containing
+            service schedules, parish announcements, and spiritual readings. New issues will be
+            posted here each month.
           </p>
         </div>
         <p className="text-gray-500 text-center py-8">

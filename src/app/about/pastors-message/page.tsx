@@ -11,28 +11,27 @@ export const metadata = buildMetadata({
 export default function PastorsMessagePage() {
   return (
     <>
-      <PageHero title="Pastor's Message" subtitle={`A word from ${church.pastor}`} />
+      <PageHero title="A Message from the Pastor" subtitle={`Welcome from ${church.pastor}`} />
       <div className="py-8 prose prose-lg max-w-none">
         <p className="text-xl text-church-burgundy font-heading italic">
-          &ldquo;Christ is in our midst!&rdquo;
+          &ldquo;Hello and welcome! We&apos;re glad that you have found us!&rdquo;
         </p>
         <p>
-          Dear brothers and sisters in Christ,
+          Dear friends,
         </p>
         <p>
-          Welcome to St. Mary&apos;s Orthodox Christian Church. It is a joy to serve as your pastor
-          and to worship alongside you in this holy place. The Orthodox Church offers the fullness
-          of the Christian faith &mdash; unchanged and unaltered since the time of the Holy Apostles &mdash;
-          and we are blessed to share this great inheritance together.
+          Let us extend a personal welcome to St. Mary&apos;s Church. We are a loving family and a
+          devoted church, and our arms and doors are open to any and all who are interested in
+          visiting.
         </p>
         <p>
-          If you are new to Orthodoxy, I invite you to come and see. Experience our Divine Liturgy,
-          receive the holy services, and join our community for fellowship. The doors of the Church
-          are open to all who seek God.
+          Whether you are curious about Orthodox Christianity, interested in the heritage of the
+          Carpatho-Rusyn people, or simply searching for a new Church family to be a part of &mdash;
+          come and visit us. You will find a warm welcome here.
         </p>
         <p>
-          If you have questions about the Orthodox faith, please do not hesitate to contact me.
-          I am here to serve you.
+          If you have any questions or concerns before visiting our Church, please feel free to
+          contact us. Once again, welcome &mdash; and God bless you. We hope to see you soon!
         </p>
         <p>
           In Christ,<br />

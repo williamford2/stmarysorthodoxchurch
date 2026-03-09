@@ -47,12 +47,12 @@ export const mainNav: NavItem[] = [
       { label: "Coffee Hour", href: "/parish-life/coffee-hour" },
     ],
   },
-  { label: "Visit Us", href: "/visit" },
+  { label: "New to St. Mary's", href: "/visit" },
   { label: "Contact Us", href: "/contact" },
   { label: "Bake Sale", href: "/bake-sale" },
   {
     label: "Give Online",
-    href: "https://tithe.ly/give_new/www/#/tithely/give-one-time/",
+    href: "https://give.tithe.ly/?formId=5528e80d-6865-11ee-90fc-1260ab546d11",
     external: true,
   },
 ];
